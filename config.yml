@@ -1,0 +1,192 @@
+# MaintenancePlugin Configuration
+
+# Messages Configuration
+messages:
+  prefix: "&8[&cMaintenance&8] "
+  no-permission: "&cYou don't have permission to use this command!"
+  maintenance-started: "&aMaintenance mode has been activated! Reason: %reason% | Start: %time% | End: %endtime%"
+  maintenance-scheduled: "&aMaintenance scheduled! &7(&fReason: &c%reason% &7| &fStart: &c%time% &7| &fEnd: &c%endtime%&7)"
+  maintenance-stopped: "&aMaintenance mode has been deactivated!"
+  kick-message:
+    - "&c&m----------------------------------------"
+    - "&r"
+    - "           &c&lSERVER MAINTENANCE"
+    - "&r"
+    - "    &c➥ &fReason: &c%reason%"
+    - "    &c➥ &fStarted: &c%time%"
+    - "    &c➥ &fExpected End: &c%endtime%"
+    - "&r"
+    - "    &7Please check back later!"
+    - "&r"
+    - "&c&m----------------------------------------"
+  initial-kick-message:
+    - "&c&m----------------------------------------"
+    - "&r"
+    - "           &c&lSERVER MAINTENANCE"
+    - "&r"
+    - "    &c➥ &fReason: &c%reason%"
+    - "    &c➥ &fStarted: &c%time%"
+    - "    &c➥ &fExpected End: &c%endtime%"
+    - "&r"
+    - "    &7Please check back later!"
+    - "&r"
+    - "&c&m----------------------------------------"
+  reload: "&aConfiguration has been reloaded!"
+  usage:
+    start:
+      - "&cUsage: &7/maintenance start <reason> <start time> <end time/uncertain>"
+      - "&7Example: &f/maintenance start Update 14:00 15:00"
+      - "&7Example: &f/maintenance start Emergency 12:30 uncertain"
+    stop:
+      - "&cUsage: &7/maintenance stop"
+    reload:
+      - "&cUsage: &7/maintenance reload"
+    help:
+      - "&6&lMaintenance Commands"
+      - "&r"
+      - "&e/maintenance start &7- Start maintenance mode"
+      - "&e/maintenance stop &7- Stop maintenance mode"
+      - "&e/maintenance reload &7- Reload configuration"
+
+# BossBar Configuration
+bossbar:
+  enabled: true
+  title: "&c&lMAINTENANCE MODE"
+  color: "RED" # RED, BLUE, GREEN, PINK, PURPLE, WHITE, YELLOW
+  style: "SOLID" # SOLID, SEGMENTED_6, SEGMENTED_10, SEGMENTED_12, SEGMENTED_20
+  update-interval: 1 # seconds
+
+# MOTD Configuration
+motd:
+  # Time-based player count settings
+  player-count:
+    update-interval: 300 # 5 minutes in seconds
+    time-ranges:
+      morning: # 06:00 - 11:59
+        start-time: "06:00"
+        end-time: "11:59"
+        min-players: 200
+        max-players: 250
+      afternoon: # 12:00 - 17:59
+        start-time: "12:00"
+        end-time: "17:59"
+        min-players: 325
+        max-players: 350
+      evening: # 18:00 - 23:59
+        start-time: "18:00"
+        end-time: "23:59"
+        min-players: 550
+        max-players: 600
+      night: # 00:00 - 05:59
+        start-time: "00:00"
+        end-time: "05:59"
+        min-players: 120
+        max-players: 150
+
+  # Normal server state
+  normal:
+    spigot:
+      - "&a&lMINECRAFT SERVER &7- &f1.8-1.20"
+      - "&a➥ &fJoin and play with us!"
+    hover:
+      - "&6&m                                                "
+      - "&r"
+      - "&e&lWELCOME TO OUR SERVER!"
+      - "&r"
+      - "&fOnline Players: &a%online%&7/&c%max%"
+      - "&fServer Status: &aOnline"
+      - "&fVersion: &61.8-1.20"
+      - "&r"
+      - "&7Join now and have fun with us!"
+      - "&r"
+      - "&6&m                                                "
+    fake-players:
+      enabled: true
+      use-time-based: true # Whether to use time-based player counts
+      default: # Used when use-time-based is false
+        min: 100
+        max: 500
+      player-list:
+        - "&f"
+        - "&e&lSERVER INFO"
+        - "&f"
+        - "&8» &fStatus: &aOnline"
+        - "&8» &fPlayers: &a%online%&7/&c%max%"
+        - "&8» &fVersion: &61.8-1.20"
+        - "&f"
+        - "&e&lFEATURES"
+        - "&f"
+        - "&8» &fRanks"
+        - "&8» &fEconomy"
+        - "&8» &fMinigames"
+
+  # Maintenance mode state
+  maintenance:
+    spigot:
+      - "&c&lMAINTENANCE MODE"
+      - "&c➥ &7%reason%"
+    hover:
+      - "&c&m                                                "
+      - "&r"
+      - "&c&lSERVER MAINTENANCE"
+      - "&r"
+      - "&fStatus: &cMaintenance"
+      - "&fReason: &7%reason%"
+      - "&fStarted: &7%time%"
+      - "&fEstimated End: &7%endtime%"
+      - "&r"
+      - "&7Please check back later!"
+      - "&r"
+      - "&c&m                                                "
+    fake-players:
+      enabled: true
+      min: 0
+      max: 0
+      player-list:
+        - "&f"
+        - "&c&lMAINTENANCE INFO"
+        - "&f"
+        - "&8» &fStatus: &cMaintenance"
+        - "&8» &fReason: &7%reason%"
+        - "&8» &fStarted: &7%time%"
+        - "&8» &fEnd: &7%endtime%"
+
+  # Scheduled maintenance state
+  scheduled:
+    spigot:
+      - "&e&lSCHEDULED MAINTENANCE"
+      - "&e➥ &7Maintenance at %time%"
+    hover:
+      - "&e&m                                                "
+      - "&r"
+      - "&e&lSCHEDULED MAINTENANCE"
+      - "&r"
+      - "&fStatus: &eScheduled"
+      - "&fTime: &7%time%"
+      - "&fReason: &7%reason%"
+      - "&r"
+      - "&7The server will be under maintenance soon."
+      - "&r"
+      - "&e&m                                                "
+    fake-players:
+      enabled: true
+      min: 50
+      max: 100
+      player-list:
+        - "&f"
+        - "&e&lMAINTENANCE INFO"
+        - "&f"
+        - "&8» &fStatus: &eScheduled"
+        - "&8» &fTime: &7%time%"
+        - "&8» &fReason: &7%reason%"
+        - "&8» &fPlayers: &e%online%&7/&c%max%"
+
+# Advanced Settings
+settings:
+  auto-save: true
+  save-interval: 5 # minutes
+  debug-mode: false
+  use-protocol-lib: true # Must be true for MOTD features
+  maintenance-scheduler:
+    check-interval: 1 # seconds
+    broadcast-times: [30, 15, 10, 5, 4, 3, 2, 1] # minutes before maintenance 
