@@ -24,3 +24,4 @@ The 11ThMaintenance plugin is designed for effortless maintenance management, ke
 ![image](https://github.com/user-attachments/assets/94c828c9-ace8-479e-b339-0c48d36d7017)
 
 
+Discord: 11ThPlugins
