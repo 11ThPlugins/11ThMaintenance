@@ -18,3 +18,9 @@ Auto-Reactivation: If the server restarts during a scheduled maintenance period,
 The 11ThMaintenance plugin is designed for effortless maintenance management, keeping your server running smoothly while ensuring players stay informed. 🚀
 
 ![image](https://github.com/user-attachments/assets/25d0e9d8-67a2-450d-8137-74402397ca0a)
+![image](https://github.com/user-attachments/assets/64b2f543-7b42-43dd-8ca5-433a4ce8e9e7)
+![image](https://github.com/user-attachments/assets/0a8f4ea0-9056-479e-b596-7e3cfa4f650e)
+![image](https://github.com/user-attachments/assets/bf680556-d235-437f-86d4-23da6108cec1)
+![image](https://github.com/user-attachments/assets/94c828c9-ace8-479e-b339-0c48d36d7017)
+
+
