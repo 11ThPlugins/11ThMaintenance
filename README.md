@@ -16,3 +16,5 @@ Full Tab Support: Seamless integration with tab lists for a more immersive exper
 Ease of Use: Simple and user-friendly commands for efficient maintenance management.
 Auto-Reactivation: If the server restarts during a scheduled maintenance period, the maintenance mode automatically reactivates upon startup.
 The 11ThMaintenance plugin is designed for effortless maintenance management, keeping your server running smoothly while ensuring players stay informed. 🚀
+
+![image](https://github.com/user-attachments/assets/25d0e9d8-67a2-450d-8137-74402397ca0a)
